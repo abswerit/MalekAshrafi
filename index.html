@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মাওলানা আব্দুল মালেক আশরাফী | চট্টগ্রাম-১৬ নির্বাচনী প্রচারণা ২০২৬</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/abswerit/MalekAshrafi/main/favicon.ico">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .gradient-brand { background: linear-gradient(135deg, #006837 0%, #014122 100%); }
+        .symbol-glow { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3)); }
+        .manifesto-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .mobile-cta { box-shadow: 0 -4px 20px rgba(0,0,0,0.1); }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade { animation: fadeIn 0.8s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-900 overflow-x-hidden">
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+
+    <!-- Navigation -->
+    <header class="glass-nav shadow-sm sticky top-0 z-[100]">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-green-700 text-white p-2 rounded-xl font-bold text-lg shadow-inner">১৬</div>
+                <div>
+                    <h1 class="text-green-800 font-extrabold text-lg leading-none">চট্টগ্রাম-১৬</h1>
+                    <p class="text-[10px] uppercase tracking-tighter text-gray-500 font-bold">সংসদীয় আসন (বাঁশখালী)</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 font-bold text-gray-600 uppercase text-sm">
+                <a href="#home" class="hover:text-green-700">হোম</a>
+                <a href="#appeal" class="hover:text-green-700">আবেদন</a>
+                <a href="#about" class="hover:text-green-700">পরিচিতি</a>
+                <a href="#manifesto" class="hover:text-green-700">অঙ্গীকার</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button onclick="toggleMenu()" class="md:hidden p-2 text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+                <div class="hidden sm:block bg-purple-700 text-white px-5 py-2 rounded-full text-xs font-black animate-pulse shadow-lg">
+                    চেয়ার মার্কায় ভোট দিন
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 space-y-3 shadow-xl">
+            <a href="#home" onclick="toggleMenu()" class="block font-bold text-gray-700">হোম</a>
+            <a href="#appeal" onclick="toggleMenu()" class="block font-bold text-gray-700">আবেদন</a>
+            <a href="#about" onclick="toggleMenu()" class="block font-bold text-gray-700">পরিচিতি</a>
+            <a href="#manifesto" onclick="toggleMenu()" class="block font-bold text-gray-700">অঙ্গীকারনামা</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-brand text-white pt-12 pb-24 md:py-24 relative overflow-hidden">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-3/5 text-center md:text-left animate-fade">
+                <div class="mb-4">
+                    <p class="text-sm md:text-base font-medium mb-2">বিসমিল্লাহির রাহমানির রাহিম</p>
+                    <div class="inline-flex flex-wrap items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                        <span class="text-xs md:text-sm font-bold tracking-widest uppercase">বৃহত্তর সুন্নী জোটের সমর্থিত</span>
+                        <span class="text-gray-400">|</span>
+                        <span class="text-xs md:text-sm font-bold tracking-widest uppercase text-yellow-400">ইসলামিক ফ্রন্ট বাংলাদেশ মনোনীত</span>
+                    </div>
+                </div>
+                
+                <h2 class="text-xl md:text-2xl font-medium mb-2 text-white/90 tracking-tight">আসন্ন ত্রয়োদশ জাতীয় সংসদ নির্বাচনে চট্টগ্রাম-১৬ (বাঁশখালী) আসনে</h2>
+                <h3 class="text-lg md:text-xl mb-4 font-bold text-slate-100">সংসদ সদস্য পদপ্রার্থী</h3>
+                
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-black mb-6 leading-[1.2] drop-shadow-xl">
+                    জননেতা হযরতুলহাজ্ব আল্লামা <br><span class="text-yellow-400">আব্দুল মালেক আশরাফী</span>-কে
+                </h1>
+                
+                <p class="text-lg md:text-2xl font-light italic text-white/80 mb-10 border-l-4 border-yellow-400 pl-6 max-w-xl">
+                    "বিশিষ্ট আলেমেদীন, ইসলামী চিন্তাবিদ ও পরিচ্ছন্ন রাজনীতিবিদ"
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <div class="bg-white/95 p-5 rounded-3xl flex items-center gap-6 shadow-2xl border-2 border-purple-600 hover:scale-105 transition">
+                        <div class="symbol-glow bg-slate-50 p-2 rounded-2xl">
+                            <img src="https://raw.githubusercontent.com/abswerit/MalekAshrafi/main/favicon.png" alt="চেয়ার প্রতীক" class="w-[60px] h-[60px] object-contain">
+                        </div>
+                        <div class="text-slate-900">
+                            <p class="text-[10px] font-black uppercase text-gray-500">নির্বাচনী মার্কা</p>
+                            <h4 class="text-3xl font-black tracking-tighter text-purple-800">চেয়ার</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-2/5 mt-16 md:mt-0 relative animate-fade" style="animation-delay: 0.2s;">
+                <div class="relative w-72 h-72 md:w-96 md:h-96 mx-auto">
+                    <div class="absolute inset-0 bg-yellow-400 rounded-full rotate-6 opacity-20 blur-2xl"></div>
+                    <div class="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-[40px] -rotate-3 border border-white/20"></div>
+                    <img src="https://raw.githubusercontent.com/abswerit/MalekAshrafi/main/portrait.png" 
+                         alt="মাওলানা আব্দুল মালেক আশরাফী" 
+                         class="relative z-10 w-full h-full object-cover rounded-[40px] border-4 border-white shadow-2xl transition duration-500">
+                </div>
+                <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white text-green-900 px-6 py-3 rounded-full shadow-lg z-20 font-bold whitespace-nowrap text-sm border-2 border-green-700">
+                    চেয়ার মার্কায় ভোট দিন
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Address to People Section -->
+    <section id="appeal" class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-slate-50 p-10 md:p-16 rounded-[3rem] shadow-sm border border-slate-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-5">
+                    <img src="https://raw.githubusercontent.com/abswerit/MalekAshrafi/main/favicon.png" class="w-40">
+                </div>
+                <h4 class="text-2xl font-bold text-green-800 mb-6">সুপ্রিয় বাঁশখালীবাসী,</h4>
+                <p class="text-lg font-bold text-gray-600 mb-4">আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহ।</p>
+                <div class="text-slate-700 leading-[1.8] text-lg space-y-4">
+                    <p>আপনারা জানেন, বহুমুখী ঐতিহ্যের ধারক চট্টগ্রাম জেলাধীন বাঁশখালী একটি গুরুত্বপূর্ণ উপজেলা। অসংখ্য জ্ঞানী-গুণী, পীর-বুজুর্গ, অলি-দরবেশ, আলেম-ওলামা, ঋষি-মনীষী ও কীর্তিমান ব্যক্তিদের স্মৃতি বিজড়িত এ উপজেলা। দেশের এযাবতকালের গৌরবোজ্জ্বল সকল আন্দোলন-সংগ্রামে অত্র উপজেলাবাসীর বিরোচিত ভূমিকা অনস্বীকার্য। স্মরণাতীতকাল থেকেই শিক্ষা-দীক্ষাসহ সার্বিক ক্ষেত্রে এ উপজেলা বরাবরই অগ্রসরমান হলেও এ উপজেলা পূর্ব থেকেই নানাভাবে বৈমাত্রিক অবহেলার শিকার। অতএব, আসন্ন নির্বাচনে অত্র এলাকার সার্বিক উন্নয়ন তথা একটি আধুনিক ও সমৃদ্ধ বাঁশখালী বিনির্মাণের লক্ষ্যে চেয়ার প্রতীকে আপনার মূল্যবান ভোট প্রদান করে জনগণের সেবা করার সুযোগ প্রদান করবেন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section id="about" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-green-700 font-black tracking-widest uppercase text-xs">প্রার্থীর সংক্ষিপ্ত পরিচিতি</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 mt-4 mb-2">মাওলানা আব্দুল মালেক আশরাফী</h2>
+                    <div class="w-24 h-1.5 bg-yellow-400 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-12 space-y-8">
+                        <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 leading-[1.8] text-lg text-slate-700 space-y-6">
+                            <p>হযরতুলহাজ্ব আল্লামা আব্দুল মালেক আশরাফী বাঁশখালী উপজেলার স্থায়ী বাসিন্দা। চট্টগ্রাম জেলাধীন বাঁশখালী উপজেলা ০৬ নং (ক) কাথরিয়া ইউনিয়নের পূর্ব কাথরিয়া ডিগ্রি পাড়া গ্রামের বিশিষ্ট ব্যবসায়ী, সমাজসেবক জনাব মরহুম দুধু মিয়ার তৃতীয় ছেলে, মরহুম মাস্টার আবদুর রহমান ও মাস্টার এম.এ মন্নানের ছোট ভাই। তিনি সুফীবাদী আদর্শ অনুসৃত ও মহান মুক্তিযুদ্ধের চেতনা সমৃদ্ধ জাতীয় রাজনৈতিক সংগঠন <strong>ইসলামিক ফ্রন্ট বাংলাদেশ (নিবন্ধন নং-৩০)</strong> এর কেন্দ্রীয় সদস্য।</p>
+                            
+                            <p>তিনি বাংলাদেশ মাদ্রাসা শিক্ষা বোর্ডের অধীনে কামিল হাদীস ও ফিকহ কৃতিত্বের সাথে সম্পন্ন করেন। লেখাপড়া সম্পন্ন করার পর থেকে তিনি বিভিন্ন ধর্মীয় প্রতিষ্ঠান বিশেষ করে বাঁশখালীস্থ প্রেমাসিয়া রেজভীয়া সিদ্দিকিয়া সুন্নিয়া দাখিল মাদ্রাসা ও বাঁশখালী বামারা আলীশাহ (রহ) সুন্নিয়া দাখিল মাদ্রাসায় নিষ্ঠার সাথে দায়িত্ব পালন করেন। বর্তমানে ফতেপুর জেবি নুরীয়া মাদ্রাসা ফটিকছড়িতে প্রধান হিসেবে নিষ্ঠার সাথে দায়িত্ব পালন করে যাচ্ছেন।</p>
+
+                            <p class="bg-green-50 p-6 rounded-2xl border-l-4 border-green-600 font-medium">তিনি একজন মিষ্টভাষী, সদালাপী তথা ধর্মীয় গুণাবলি সমৃদ্ধ ব্যক্তি হিসেবে এলাকায় তার সুখ্যাতি রয়েছে। গোটা বাঁশখালীর জনসাধারণ, পীর-মাশায়েখ, আলেম-ওলামা তথা জাতি-ধর্ম-বর্ণ নির্বিশেষে তাঁর রয়েছে গগনচুম্বী জনপ্রিয়তা। আসন্ন ত্রয়োদশ জাতীয় সংসদ নির্বাচনে চট্টগ্রাম-১৬ বাঁশখালী সংসদীয় আসনে ইসলামিক ফ্রন্ট বাংলাদেশ এর পক্ষে "চেয়ার প্রতীকে" তিনি প্রতিদ্বন্দ্বিতা করছেন। আশা করি তাঁকে আপনার মূল্যবান রায় দিয়ে একটি আধুনিক ও সমৃদ্ধ বাঁশখালী গড়ার সুযোগ দিবেন।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Manifesto Section -->
+    <section id="manifesto" class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-red-600 font-bold uppercase tracking-[0.2em] text-xs">অঙ্গীকারনামা</span>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 mt-4 mb-6">প্রার্থীর নির্বাচনী প্রতিশ্রুতি</h2>
+                <div class="w-24 h-2 bg-purple-700 mx-auto rounded-full mb-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
+                <!-- 17 Points - Verbatim from Banner 4 -->
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">১.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">বাঁশখালীর প্রধান সড়ককে চার লাইনে উন্নীত করে আনোয়ার কলার বিবির দিঘি থেকে কক্সবাজারের সাথে সংযুক্ত করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">২.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">বাঁশখালীর প্রধান সড়কের সাথে সংযুক্ত উপ-সড়ক এবং গ্রাম্য সড়ক সমূহ প্রশস্তকরণ পূর্বক সংস্কার করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">৩.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">যানজট নিরসনে প্রধান সড়কের গুরুত্বপূর্ণ পয়েন্টে গোল-চত্বরের ব্যবস্থা করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">৪.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">পশ্চিম বাঁশখালীর আশরাফ আলী শাহ (রহ.) সড়ক (খানখানাবাদ হতে দক্ষিণ ছনুয়া) আধুনিকায়ন করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">৫.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">শিক্ষা প্রতিষ্ঠানের নিরাপত্তা বৃদ্ধি, শৃঙ্খলা রক্ষা এবং শিক্ষা ব্যবস্থার আধুনিকীকরণে সিসি ক্যামেরা ও ওয়াইফাই এর ব্যবস্থা করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">৬.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">শিক্ষার্থীদের উচ্চ শিক্ষায় শিক্ষিত করার সুবিধার্থে বাঁশখালী উপজেলায় যে কোন একটি কলেজে মাস্টার্স কোর্স চালু করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">৭.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">আদর্শ চরিত্র গঠনে, ছাত্র-ছাত্রীদের যুগোপযোগী শিক্ষার পাশাপাশি ধর্মীয় শিক্ষা তথা নীতি-নৈতিকতার শিক্ষায় শিক্ষিত করে তোলা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">৮.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">খেলাধুলা ও সাংস্কৃতিক চর্চায় সহায়তা, বিনোদন কেন্দ্র ও পার্ক নির্মাণ, শিক্ষা ও প্রশিক্ষণের মাধ্যমে সৃজনশীলতা বৃদ্ধি।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">৯.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">জিরো টলারেন্স নীতি অনুসরণ পূর্বক মাদক, সন্ত্রাস, ইয়াবা, ইভটিজিং, বাল্যবিবাহ, চুরি-ডাকাতি ও জঙ্গিবাদমুক্ত সমাজ প্রতিষ্ঠা করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">১০.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">উপজেলা স্বাস্থ্য কমপ্লেক্স আধুনিকায়নের জন্য চিকিৎসক ও জনবল বৃদ্ধি, উন্নত যন্ত্রপাতি সংযোজন, প্যাথলজিক্যাল পরীক্ষার ব্যবস্থা ও জরুরী সেবা উন্নত করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">১১.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">উপজেলা স্বাস্থ্য কেন্দ্রের আওতায় প্রত্যেক ওয়ার্ডে ১টি করে চিকিৎসা সেবামূলক স্বাস্থ্য কেন্দ্র করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">১২.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">ধর্ম, বর্ণ গোষ্ঠী নির্বিশেষে সকলের জন্য সমান সুযোগ, আইনগত সুরক্ষা এবং মর্যাদা নিশ্চিতকরণের মাধ্যমে একটি বৈষম্যহীন সমাজ প্রতিষ্ঠা করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">১৩.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">জনগণের জান-মাল, ধর্মীয় উপাসনালয় ও সাংস্কৃতিক স্থাপনা সমূহের নিরাপত্তার ব্যবস্থাপূর্বক সাম্প্রদায়িক সম্প্রীতি বজায় রাখা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">১৪.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">কৃষি ও লবণ শিল্পের ন্যায্যমূল্য নিশ্চিত করে এই শিল্পকে ধ্বংসের চক্রান্ত থেকে রক্ষা করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">১৫.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">সন্ত্রাস, ঘুষ, দুর্নীতি দমন এবং প্রকৃত অপরাধীদের বিরুদ্ধে কঠোর আইনানুগ ব্যবস্থা নেয়া।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">১৬.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">বাঁশখালীর সকল শিক্ষা প্রতিষ্ঠানের সংযোগ সড়কের ঝুঁকিপূর্ণ রাস্তাঘাট সংস্কার করে শিক্ষার্থীদের যাতায়াতের সু-ব্যবস্থা ও নিরাপত্তা নিশ্চিত করা।</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border-l-8 border-green-600 shadow-sm manifesto-card">
+                    <span class="font-black text-green-700 text-lg mb-2 block tracking-widest">১৭.</span>
+                    <p class="text-slate-700 text-base md:text-lg font-medium">খেলাধুলার মাঠ সমূহ সংরক্ষণ ও আধুনিকায়ন করা।</p>
+                </div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto mt-16 bg-slate-900 text-white p-8 md:p-12 rounded-[3rem] border-t-8 border-yellow-400">
+                <p class="text-lg md:text-xl font-bold leading-relaxed italic">
+                    "আগামী ১২ ফেব্রুয়ারি ২০২৬ইং অনুষ্ঠিত হবে ত্রয়োদশ জাতীয় সংসদ নির্বাচন। ভোট একটি পবিত্র আমানত। এ পবিত্র আমানতের কোন প্রকার অপপ্রয়োগ কাম্য নয়। এ নির্বাচনে বীর প্রসবনী বাঁশখালীর কৃতিসন্তান ইসলামিক ফ্রন্ট বাংলাদেশ এর কেন্দ্রীয় সদস্য বিশিষ্ট রাজনীতিবিদ হযরতুলহাজ্ব আল্লামা আব্দুল মালেক আশরাফী ইসলামিক ফ্রন্ট বাংলাদেশ এর মনোনীত প্রার্থী হিসেবে প্রতিদ্বন্দ্বিতা করছেন। আশা করি অত্র এলাকার সার্বিক উন্নয়ন তথা একটি আধুনিক ও সমৃদ্ধ বাঁশখালী বিনির্মাণের লক্ষ্যে চেয়ার প্রতীকে আপনার মূল্যবান ভোট প্রদান করে জনগণের সেবা করার সুযোগ দিবেন।"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-24 bg-slate-50 text-center relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-black mb-12 leading-tight text-slate-800">আসুন বাঁশখালীবাসীর সেবা করার সুযোগ দিন</h2>
+            
+            <div class="relative inline-block group">
+                <div class="absolute -inset-10 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+                <div class="relative bg-white text-slate-900 px-12 py-12 rounded-[4rem] shadow-2xl border-b-[12px] border-purple-800 transform group-hover:scale-105 transition duration-500 border border-gray-100">
+                    <div class="flex flex-col items-center gap-6">
+                        <div class="bg-slate-50 p-6 rounded-3xl border border-gray-100 shadow-inner">
+                             <img src="https://raw.githubusercontent.com/abswerit/MalekAshrafi/main/favicon.png" alt="চেয়ার প্রতীক" class="w-[100px] h-[100px] object-contain">
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-sm font-black text-gray-400 tracking-[0.4em] uppercase block">একটি পবিত্র আমানত</span>
+                            <h3 class="text-5xl md:text-7xl font-black text-purple-900 tracking-tighter">চেয়ার মার্কায়</h3>
+                            <p class="text-2xl md:text-3xl font-bold text-slate-700 mt-2">ভোট দিন</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="mt-20 text-xl md:text-4xl font-black text-green-700 italic tracking-tight drop-shadow-sm">
+                "ইনসাফ, উন্নয়ন ও সমৃদ্ধির চট্টগ্রাম-১৬ (বাঁশখালী) গড়তে ঐক্যবদ্ধ হোন!"
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <div class="w-16 h-1 bg-green-600 hidden md:block"></div>
+                <p class="text-lg md:text-2xl font-bold text-slate-200 tracking-wide px-4">প্রচারণায়: চট্টগ্রাম-১৬ (বাঁশখালী) সংসদীয় এলাকার সর্বস্তরের জনসাধারণ।</p>
+                <div class="w-16 h-1 bg-green-600 hidden md:block"></div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4 max-w-sm mx-auto mb-12 opacity-60 font-black text-xs md:text-sm tracking-[0.3em] uppercase">
+                <span class="text-green-400 border-r border-white/20">ইনসাফ</span>
+                <span class="text-white border-r border-white/20">উন্নয়ন</span>
+                <span class="text-purple-400">সমৃদ্ধি</span>
+            </div>
+            
+            <div class="text-[11px] text-gray-500 uppercase tracking-widest font-bold leading-relaxed space-y-2">
+                <p>&copy; ২০২৬ নির্বাচনী প্রচারণা সেল | চট্টগ্রাম-১৬ (বাঁশখালী) সংসদীয় আসন</p>
+                <p class="text-gray-600">ডিজাইন: MNA Team - Abswer.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white mobile-cta p-4 z-[200] flex justify-between items-center animate-fade">
+        <div class="flex items-center gap-3">
+            <img src="https://raw.githubusercontent.com/abswerit/MalekAshrafi/main/favicon.png" alt="চেয়ার প্রতীক" class="w-[35px] h-[35px] object-contain">
+            <span class="font-black text-purple-900 text-sm">চেয়ার মার্কায় ভোট দিন</span>
+        </div>
+        <a href="#manifesto" class="bg-green-700 text-white px-5 py-2.5 rounded-2xl text-xs font-bold shadow-lg">প্রতিশ্রুতি</a>
+    </div>
+
+</body>
+</html>
