@@ -70,6 +70,31 @@
         .clip-shape {
             clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
         }
+
+        /* Modal Transitions */
+        .modal {
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .modal-content {
+            transform: scale(0.95);
+            transition: transform 0.3s ease-in-out;
+        }
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+        
+        /* Audio Visualizer Animation */
+        .bar {
+            width: 3px;
+            background: #D4AF37;
+            animation: equalize 1s infinite;
+        }
+        @keyframes equalize {
+            0% { height: 5px; }
+            50% { height: 15px; }
+            100% { height: 5px; }
+        }
+        .paused .bar { animation-play-state: paused; height: 3px !important; }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-800 antialiased overflow-x-hidden">
@@ -94,10 +119,10 @@
                         <a href="#about" class="hover:text-brand-green transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-green after:transition-all hover:after:w-full">পরিচিতি</a>
                         <a href="#manifesto" class="hover:text-brand-green transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-green after:transition-all hover:after:w-full">অঙ্গীকারনামা</a>
                         
-                        <a href="frame.html" class="flex items-center gap-2 bg-gradient-to-r from-brand-purple to-purple-800 text-white px-5 py-2 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition duration-300">
+                        <button onclick="toggleModal(true)" class="flex items-center gap-2 bg-gradient-to-r from-brand-purple to-purple-800 text-white px-5 py-2 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition duration-300">
                             <i data-lucide="camera" class="w-4 h-4"></i>
                             <span>পোস্টার তৈরি</span>
-                        </a>
+                        </button>
                     </div>
 
                     <!-- Mobile Menu Button -->
@@ -114,9 +139,9 @@
                 <a href="#home" onclick="toggleMenu()" class="p-2 hover:bg-green-50 rounded-lg text-brand-green">হোম</a>
                 <a href="#about" onclick="toggleMenu()" class="p-2 hover:bg-green-50 rounded-lg text-brand-green">পরিচিতি</a>
                 <a href="#manifesto" onclick="toggleMenu()" class="p-2 hover:bg-green-50 rounded-lg text-brand-green">অঙ্গীকারনামা</a>
-                <a href="frame.html" class="p-3 bg-purple-100 text-purple-800 rounded-lg text-center flex justify-center items-center gap-2">
+                <button onclick="toggleMenu(); toggleModal(true)" class="p-3 bg-purple-100 text-purple-800 rounded-lg text-center flex justify-center items-center gap-2 w-full">
                     <i data-lucide="camera" class="w-4 h-4"></i> নিজের পোস্টার তৈরি করুন
-                </a>
+                </button>
             </div>
         </div>
     </nav>
@@ -151,7 +176,7 @@
                         <span class="text-sm not-italic mt-1 block opacity-75">ইসলামিক ফ্রন্ট বাংলাদেশ মনোনীত ও বৃহত্তর সুন্নী জোট সমর্থিত</span>
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center">
+                    <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center mb-8">
                         <!-- Symbol Card -->
                         <div class="bg-white p-2 pr-6 rounded-2xl flex items-center gap-4 shadow-2xl transform hover:scale-105 transition duration-300 group">
                             <div class="bg-gray-100 p-2 rounded-xl">
@@ -168,6 +193,35 @@
                             <span>অঙ্গীকারনামা দেখুন</span>
                             <i data-lucide="arrow-down" class="w-4 h-4"></i>
                         </a>
+                    </div>
+
+                    <!-- Audio Player Section -->
+                    <div class="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-2xl animate-fade-in-up">
+                        <button onclick="toggleAudio()" class="w-12 h-12 bg-white text-brand-green rounded-full flex items-center justify-center hover:scale-110 transition shadow-lg relative z-10">
+                            <i data-lucide="play" id="playIcon" class="w-5 h-5 fill-current ml-0.5"></i>
+                            <i data-lucide="pause" id="pauseIcon" class="w-5 h-5 fill-current hidden"></i>
+                        </button>
+                        
+                        <div class="text-left flex-1 min-w-[150px]">
+                            <p class="text-[10px] text-yellow-300 font-bold uppercase tracking-wider">নির্বাচনী প্রচার</p>
+                            <p class="text-white font-bold text-sm leading-tight">অডিও শুনুন</p>
+                            <!-- Audio Visualizer -->
+                            <div class="flex gap-1 h-3 items-end mt-1 paused" id="visualizer">
+                                <div class="bar h-1" style="animation-delay: 0.1s"></div>
+                                <div class="bar h-2" style="animation-delay: 0.2s"></div>
+                                <div class="bar h-3" style="animation-delay: 0.3s"></div>
+                                <div class="bar h-1" style="animation-delay: 0.4s"></div>
+                                <div class="bar h-2" style="animation-delay: 0.5s"></div>
+                            </div>
+                        </div>
+
+                        <div class="h-8 w-px bg-white/20 mx-1"></div>
+
+                        <a href="https://raw.githubusercontent.com/abswerit/MalekAshrafi/main/audio.mp3" target="_blank" download class="text-white/80 hover:text-white hover:bg-white/10 p-2 rounded-lg transition" title="ডাউনলোড করুন">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                        </a>
+                        
+                        <audio id="campaignAudio" src="https://raw.githubusercontent.com/abswerit/MalekAshrafi/main/audio.mp3"></audio>
                     </div>
                 </div>
 
@@ -326,12 +380,12 @@
 
         <div class="container mx-auto px-4 relative z-10 text-center">
             <h2 class="text-3xl md:text-4xl font-black text-white mb-6">সমর্থন জানাতে প্রস্তুত?</h2>
-            <p class="text-purple-100 text-xl mb-8 max-w-2xl mx-auto">আপনার ছবি দিয়ে প্রফেশনাল নির্বাচনী পোস্টার তৈরি করুন মাত্র এক ক্লিকে এবং শেয়ার করুন সোশ্যাল মিডিয়ায়।</p>
+            <p class="text-purple-100 text-xl mb-8 max-w-2xl mx-auto">আপনার ছবি দিয়ে প্রফেশনাল নির্বাচনী পোস্টার তৈরি করুন মাত্র এক ক্লিকে এবং শেয়ার করুন সোশ্যাল মিডিয়ায়।</p>
             
-            <a href="frame.html" class="inline-flex items-center gap-3 bg-white text-brand-purple px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-yellow-400 hover:text-black transition transform hover:-translate-y-1">
+            <button onclick="toggleModal(true)" class="inline-flex items-center gap-3 bg-white text-brand-purple px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-yellow-400 hover:text-black transition transform hover:-translate-y-1">
                 <i data-lucide="camera" class="w-6 h-6"></i>
                 ডিজিটাল পোস্টার তৈরি করুন
-            </a>
+            </button>
         </div>
     </section>
 
@@ -384,7 +438,60 @@
                     <p class="text-sm font-bold text-brand-gold leading-none">চেয়ার মার্কায়</p>
                 </div>
             </div>
-            <a href="frame.html" class="bg-brand-purple px-4 py-2 rounded-xl text-xs font-bold shadow-lg">পোস্টার তৈরি</a>
+            <button onclick="toggleModal(true)" class="bg-brand-purple px-4 py-2 rounded-xl text-xs font-bold shadow-lg">পোস্টার তৈরি</button>
+        </div>
+    </div>
+
+    <!-- Poster Generator Modal -->
+    <div id="posterModal" class="modal fixed inset-0 z-[60] flex items-center justify-center px-4 opacity-0 invisible">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal(false)"></div>
+        
+        <!-- Modal Content -->
+        <div class="modal-content bg-white w-full max-w-lg rounded-3xl shadow-2xl relative overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="bg-brand-green p-4 flex justify-between items-center text-white">
+                <h3 class="font-bold text-lg flex items-center gap-2">
+                    <i data-lucide="camera" class="w-5 h-5"></i>
+                    ডিজিটাল পোস্টার
+                </h3>
+                <button onclick="toggleModal(false)" class="p-1 hover:bg-white/20 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto">
+                <div class="bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl p-8 text-center mb-6">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 shadow-sm text-brand-purple">
+                        <i data-lucide="upload-cloud" class="w-8 h-8"></i>
+                    </div>
+                    <p class="text-gray-600 font-medium">আপনার ছবি আপলোড করুন</p>
+                    <p class="text-xs text-gray-400 mt-1">সর্বোচ্চ ২ মেগাবাইট (JPG, PNG)</p>
+                    <button class="mt-4 px-6 py-2 bg-white border border-gray-300 rounded-lg text-sm font-bold hover:bg-gray-50 transition">ফাইল বাছুন</button>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex gap-3 overflow-x-auto pb-2">
+                        <!-- Frame Options -->
+                        <div class="flex-shrink-0 w-20 h-24 bg-brand-green/10 rounded-lg border-2 border-brand-green relative cursor-pointer">
+                            <span class="absolute top-1 right-1 bg-brand-green text-white text-[10px] px-1 rounded">১</span>
+                        </div>
+                        <div class="flex-shrink-0 w-20 h-24 bg-gray-100 rounded-lg border border-gray-200 cursor-pointer hover:border-brand-green/50"></div>
+                        <div class="flex-shrink-0 w-20 h-24 bg-gray-100 rounded-lg border border-gray-200 cursor-pointer hover:border-brand-green/50"></div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <input type="text" placeholder="আপনার নাম (বাংলায়)" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green">
+                        <input type="text" placeholder="পদবী (যেমন: সমাজসেবক)" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green">
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-gray-100 bg-gray-50">
+                <button class="w-full bg-brand-gold text-brand-dark font-bold py-3.5 rounded-xl hover:bg-yellow-400 transition shadow-lg flex justify-center items-center gap-2">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    ডাউনলোড করুন
+                </button>
+            </div>
         </div>
     </div>
 
@@ -409,6 +516,40 @@
             
             if (!menu.classList.contains('hidden')) {
                 nav.classList.add('bg-white');
+            }
+        }
+
+        // Modal Logic
+        function toggleModal(show) {
+            const modal = document.getElementById('posterModal');
+            if (show) {
+                modal.classList.remove('invisible', 'opacity-0');
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                modal.classList.add('invisible', 'opacity-0');
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        }
+
+        // Audio Logic
+        function toggleAudio() {
+            const audio = document.getElementById('campaignAudio');
+            const playIcon = document.getElementById('playIcon');
+            const pauseIcon = document.getElementById('pauseIcon');
+            const visualizer = document.getElementById('visualizer');
+
+            if (audio.paused) {
+                audio.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                visualizer.classList.remove('paused');
+            } else {
+                audio.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                visualizer.classList.add('paused');
             }
         }
 
